@@ -1,0 +1,95 @@
+body{
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+header{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+main{
+    border: 1px solid #8d8d8d;
+    margin: 5%;
+    width: 87vw;
+    height: 75vh;
+}
+#game{
+    display: flex;
+}
+#game>p{
+    font-size: xx-large;
+}
+
+#hudP{
+    border: 1px solid white;
+    width: 50%;
+    height: 70vh;
+    margin: 20px;
+    position: relative;
+}
+#hudM{
+    border: 1px solid white;
+    width: 50%;
+    height: 70vh;
+    margin: 20px;
+}
+#AtackP{
+    background-color: transparent;
+    color: #e0e0e0;
+    font-size: xx-large;
+    width: fit-content;
+    height: fit-content;
+    padding: 2vh;
+    border: 0px;
+    margin: 5px;
+    position: absolute;
+    top: 30vh;
+    left: 15vw;
+}
+#AtackP:hover{
+    border: 1px solid white;
+}
+#xpBar{
+    position: absolute;
+    top: 90%;
+    margin-left: 5%;
+}
+.disabled{
+    display: none;
+}
+#btnContinuar{
+    background-color: transparent;
+    color: #e0e0e0;
+    font-size: xx-large;
+    width: fit-content;
+    height: fit-content;
+    padding: 2vh;
+    border: 0px;
+    margin: 5px;
+    position: absolute;
+    top: 40vh;
+    left: 15vw;
+}
+#btnContinuar:hover{
+    border: 1px solid white;
+}
+#sttsGeral{
+    position: absolute;
+    right: 5%;
+}
+pre{
+    margin-left: 5%;
+}
+#manter{
+    display: flex;
+    justify-content: center;
+    margin: 2%
+}
+#manter>label{
+    margin-left: 1%;
+}
+#lvMob{
+    position: absolute;
+    top:35%;
+    left: 16vw
+}
