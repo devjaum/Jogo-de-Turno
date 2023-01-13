@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Turno</title>
+</head>
+<body>
+    <header>Jogo de turno</header>
+    <main>
+        <div id="game">
+            <div id="hudP">
+                <div>
+                    <p id="lvMob" class="disabled">Level do mostro atual: </p>
+                    <button id="AtackP">Atack</button>
+                    <button id="btnContinuar" class="disabled" onclick="nivelAnterior()">Mob lv. 1</button>
+                </div>
+                <pre id="sttsGeral"></pre>
+            </div>
+            <div id="hudM">
+            </div>
+        </div>
+        <div id="manter">
+            <input type="checkbox" id="manterNivel"><label for="manterNivel">Manter o nivel</label>
+        </div>
+    </main>
+</body>
+<script src="index.js"></script>
+</html>
