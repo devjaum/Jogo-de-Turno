@@ -6,6 +6,7 @@ let xpUpdate = document.createElement('p');
 let continuarBtn = document.getElementById('btnContinuar');
 let cont = 0;
 let manterNivel = document.getElementById("manterNivel");
+let proxLv = document.getElementById('proxLv');
 
 let stts = {
     player:{
@@ -46,7 +47,7 @@ function init(){
     let sttsP = document.createElement("pre");
     sttsP.id = "sttsP"; sttsP.innerText = "Vida: "+stts.player.hp;
     let sttsM = document.createElement("pre");
-    sttsM.id = "sttsM"; sttsM.innerText = "Vida: "+stts.mob.hp;
+    sttsM.id = "sttsM"; sttsM.innerText = "Vida: "+stts.mob.hp+" LV: " + stts.mob.lv;
     document.getElementById('hudP').appendChild(sttsP);
     document.getElementById('hudM').appendChild(sttsM);
     barraXp.xp = stts.mob.lv;
@@ -89,15 +90,17 @@ function lv_Up(){
         barraXp.xp = 0;
         stts.player.lv++;
     }
+    
     xpUpdate.innerText = "XP:"+barraXp.xp.toFixed(1)+"/"+barraXp.newLv.toFixed(1);
 }
 
 function next_mob(mob){
+    proxLv.classList.add('disabled');
     mob.lv++;
     sttsMob(mob);
     ataqueBtn.innerText = "Atack";
     document.getElementById('sttsP').innerText = "Vida: "+ verificarHp(stts.player);
-    document.getElementById('sttsM').innerText = "Vida: "+ verificarHp(stts.mob);
+    document.getElementById('sttsM').innerText = "Vida: "+ verificarHp(stts.mob) + " LV: " + stts.mob.lv;
     let continuarBtn = document.getElementById('btnContinuar');
     continuarBtn.classList.add('disabled');
 }
@@ -110,32 +113,44 @@ function sttsMob(mob){
 
 function proximo(){
     lv_Up(xpBar(xpUpdate));
-    ataqueBtn.innerText = "Mob lv. "+ Number(stts.mob.lv+1);
+    proxLv.innerText = "Mob lv. "+ Number(stts.mob.lv+1);
+    proxLv.classList.remove('disabled');
+    ataqueBtn.classList.add('disabled');
     document.getElementById('lvMob').classList.remove('disabled');
-    document.getElementById('lvMob').innerText = "Level do mostro atual: "+ stts.mob.lv;
+    document.getElementById('lvMob').innerText = "Level do monstro atual: "+ stts.mob.lv;
     continuarBtn.classList.remove('disabled');
     continuarBtn.innerText = "Mob lv. "+ Number(stts.mob.lv);
-
-    if(cont > 1){
-        next_mob(stts.mob);
-        document.getElementById('lvMob').classList.add('disabled');
-        return 0;
-    }
-    return cont;
-    
 }
+
+function proximoMob(){
+    next_mob(stts.mob);
+    document.getElementById('lvMob').classList.add('disabled');
+    trocar(proxLv, continuarBtn);
+}
+
+function trocar(primeiro, segundo){
+    primeiro.classList.add('primeiro');
+    primeiro.classList.remove('segundo');
+    segundo.classList.remove('primeiro');
+    segundo.classList.add('segundo');
+    ataqueBtn.classList.remove('disabled');
+}
+
 function nivelAnterior(){
     document.getElementById('lvMob').classList.remove('disabled');
     document.getElementById('lvMob').innerText = "Level do mostro atual: "+ stts.mob.lv;
     if(Number(stts.mob.lv)>1 && !manterNivel.checked) Number(stts.mob.lv--);
-    cont = 0;
+    
     sttsMob(stts.mob);
     stts.mob.hp = (stts.mob.atk+stts.mob.def)*10;
     ataqueBtn.innerText = "Atack";
     continuarBtn.classList.add("disabled");
     document.getElementById('sttsP').innerText = "Vida: "+ verificarHp(stts.player);
-    document.getElementById('sttsM').innerText = "Vida: "+ verificarHp(stts.mob);
+    document.getElementById('sttsM').innerText = "Vida: "+ verificarHp(stts.mob)+ " LV: " + stts.mob.lv;
     document.getElementById('lvMob').classList.add('disabled');
+    proxLv.classList.add('disabled');
+    if(manterNivel.checked) trocar(continuarBtn,proxLv);
+    else ataqueBtn.classList.remove('disabled');
 }
 function aleatorio1a3(){
     return Math.floor(Math.random()*3+1);
@@ -147,7 +162,7 @@ function mostrarStts(){
     document.getElementById('sttsGeral').innerText = "Lv: "+stts.player.lv+"\nHP:"+(stts.player.atk+stts.player.def)*10+"\nATK: "+stts.player.atk+"\nDEF: "+stts.player.def;
 
 }
-ataqueBtn.addEventListener("click",()=>{
+function atacar(){
     let danoPlayer = 0;
     let danoMob = 0;
     if(stts.player.hp <= 0){
@@ -157,9 +172,9 @@ ataqueBtn.addEventListener("click",()=>{
     danoPlayer = atack(stts.player,stts.mob);
     danoMob = atack(stts.mob,stts.player);
 
-    if(verificarHp(stts.mob) == 0) {cont++;cont = proximo(cont);};
+    if(verificarHp(stts.mob) == 0) proximo(cont);
     
     mostrarStts()
     document.getElementById('sttsP').innerText = "Vida: "+ verificarHp(stts.player) + "\nDano: " + danoPlayer;
-    document.getElementById('sttsM').innerText = "Vida: "+ verificarHp(stts.mob) + "\nDano: " + danoMob;
-});
+    document.getElementById('sttsM').innerText = "Vida: "+ verificarHp(stts.mob) + " LV: " + stts.mob.lv +  "\nDano: " + danoMob;
+}

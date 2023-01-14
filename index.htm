@@ -14,8 +14,9 @@
             <div id="hudP">
                 <div>
                     <p id="lvMob" class="disabled">Level do mostro atual: </p>
-                    <button id="AtackP">Atack</button>
-                    <button id="btnContinuar" class="disabled" onclick="nivelAnterior()">Mob lv. 1</button>
+                    <button id="AtackP" onclick="atacar()" class="primeiro">Atack</button>
+                    <button id="proxLv" class="disabled primeiro" onclick="proximoMob()"></button>
+                    <button id="btnContinuar" class="disabled segundo" onclick="nivelAnterior()">Mob lv. 1</button>
                 </div>
                 <pre id="sttsGeral"></pre>
             </div>

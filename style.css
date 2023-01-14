@@ -33,7 +33,7 @@ main{
     height: 70vh;
     margin: 20px;
 }
-#AtackP{
+#AtackP, #btnContinuar, #proxLv{
     background-color: transparent;
     color: #e0e0e0;
     font-size: xx-large;
@@ -42,11 +42,9 @@ main{
     padding: 2vh;
     border: 0px;
     margin: 5px;
-    position: absolute;
-    top: 30vh;
-    left: 15vw;
+
 }
-#AtackP:hover{
+#AtackP:hover, #btnContinuar:hover, #proxLv:hover{
     border: 1px solid white;
 }
 #xpBar{
@@ -57,21 +55,15 @@ main{
 .disabled{
     display: none;
 }
-#btnContinuar{
-    background-color: transparent;
-    color: #e0e0e0;
-    font-size: xx-large;
-    width: fit-content;
-    height: fit-content;
-    padding: 2vh;
-    border: 0px;
-    margin: 5px;
+.segundo{
     position: absolute;
     top: 40vh;
     left: 15vw;
 }
-#btnContinuar:hover{
-    border: 1px solid white;
+.primeiro{
+    position: absolute;
+    top: 30vh;
+    left: 15vw;
 }
 #sttsGeral{
     position: absolute;
