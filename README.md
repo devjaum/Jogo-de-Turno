@@ -13,5 +13,18 @@ Tenho assistido e jogado muito RPG de mesa ultimamente, por isso, estou me senti
  - Adição de uma interface básica
 
 ## Versão 1.1
+
  - Melhorias na interface
  - Aprimoramento do sistema de criação de monstros"
+ 
+ ## Versão 1.2
+ 
+ - Adicionado sistema de rotas 
+ - Implementado o sistema de criação de personagem 
+ - Melhorias no código
+ 
+ ## Jogue
+ 
+ [Jogo-de-Turno](https://devjaum.github.io/Jogo-de-Turno/) 
+ 
+ Ainda está em desenvolvimento.
