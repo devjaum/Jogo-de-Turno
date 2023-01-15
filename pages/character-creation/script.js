@@ -103,5 +103,5 @@ function storeData() {
 }
 
 function goToHomePage() {
-    window.location.href = "/pages/home/index.htm";
+    window.location.href = "Jogo-de-Turno/pages/home/index.htm";
 }
