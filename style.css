@@ -1,3 +1,9 @@
+*{
+    -webkit-user-select:none;  
+    -moz-user-select:none;     
+    -ms-user-select:none;      
+    user-select:none;
+}
 body{
     background-color: #1a1a1a;
     color: #e0e0e0;
@@ -6,82 +12,59 @@ header{
     display: flex;
     justify-content: center;
     font-size: xx-large;
+    font-size: 3vw;
 }
 main{
-    border: 1px solid #8d8d8d;
-    margin: 5%;
-    width: 87vw;
-    height: 75vh;
+    width: 100%;
+    flex-direction: column;
 }
-#game{
-    display: flex;
-}
-#game>p{
-    font-size: xx-large;
-}
-
-#hudP{
-    border: 1px solid white;
-    width: 50%;
-    height: 70vh;
-    margin: 20px;
-    position: relative;
-}
-#hudM{
-    border: 1px solid white;
-    width: 50%;
-    height: 70vh;
-    margin: 20px;
-}
-#AtackP, #btnContinuar, #proxLv{
+button{
     background-color: transparent;
     color: #e0e0e0;
-    font-size: xx-large;
-    width: fit-content;
-    height: fit-content;
-    padding: 2vh;
     border: 0px;
-    margin: 5px;
-
+    width: 12vw;
+    height: 10vh;
+    font-size: 2vw;
 }
-#AtackP:hover, #btnContinuar:hover, #proxLv:hover{
-    border: 1px solid white;
-}
-#xpBar{
-    position: absolute;
-    top: 90%;
-    margin-left: 5%;
+button:hover{
+    border: 0.1vw solid white;
 }
 .disabled{
     display: none;
 }
-.segundo{
-    position: absolute;
-    top: 40vh;
-    left: 15vw;
-}
-.primeiro{
-    position: absolute;
-    top: 30vh;
-    left: 15vw;
-}
-#sttsGeral{
-    position: absolute;
-    right: 5%;
-}
 pre{
     margin-left: 5%;
+    font-size: 1vw;
 }
-#manter{
+#statusBase,.inputName{
+    font-size: 2vw
+}
+.inline {
+    display: inline-block;
+}
+.incorrect{
+    color: red !important;
+}
+.incorrectInput{
+    background-color: red !important;
+}
+#playerInformation {
+    position: absolute; 
+    bottom: 20vh; 
+    right: 30vw; 
     display: flex;
-    justify-content: center;
-    margin: 2%
+    justify-content: flex-end;
 }
-#manter>label{
-    margin-left: 1%;
+#mobInformation{
+    position: absolute; 
+    top: 2vh; 
+    left: 30vw; 
+    display: flex;
+    justify-content: flex-end;
 }
-#lvMob{
+#hudButtons{
+    display: flex;
     position: absolute;
-    top:35%;
-    left: 16vw
+    top: 45%;
+    left: 45%;
 }

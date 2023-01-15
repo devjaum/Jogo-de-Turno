@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Criação de personagem</title>
+</head>
+<body>
+    <header>
+        <h3>Criação de personagem</h3>
+    </header>
+    <main style="justify-content: center;align-items: center;display: flex;">
+        <input type="text" class="inputName" placeholder="Nickname" id="nickname">
+        <div id="statusBase">
+            <p class="inline" id="hp">Vida: 0</p><br>
+            <p class="inline" id="atk">Ataque: 0</p> <label class="inline" onclick="increaseAttack()">+</label><br>
+            <p class="inline" id="def" >Defesa: 0</p> <label class="inline" onclick="increaseDefense()">+</label><br>
+            <p class="inline" id="limit">Pontos restantes: </p>
+        </div>
+        <button onclick="confirm()">Continuar</button>
+        <button onclick="reset()">Resetar</button>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
