@@ -50,6 +50,7 @@ let nickname = sessionStorage.getItem("nickname");
 let attack = Number(sessionStorage.getItem("attack"));
 let defense = Number(sessionStorage.getItem("defense"));
 let level = Number(sessionStorage.getItem("level"));
+if(level == 0) level = 1;
 const attackButton = document.getElementById('attackButton');
 const player = new Player(0,level,0,attack,defense);
 let mobLevel = Number(sessionStorage.getItem("mobLevel"));
