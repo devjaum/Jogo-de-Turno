@@ -2,7 +2,7 @@ let LIMIT = 10;
 let attack = 0;
 let defense = 0;
 let nickname = "";
-let level = (sessionStorage.getItem('level') === 'null')?1:sessionStorage.getItem('level');
+let level = (sessionStorage.getItem('level'))?1:sessionStorage.getItem('level');
 const limitElement = document.getElementById("limit");
 const atkElement = document.getElementById("atk");
 const defElement = document.getElementById("def");
