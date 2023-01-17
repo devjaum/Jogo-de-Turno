@@ -2,8 +2,7 @@ let LIMIT = 10;
 let attack = 0;
 let defense = 0;
 let nickname = "";
-
-
+let level = (sessionStorage.getItem('level') == 0)?1:sessionStorage.getItem('level');
 const limitElement = document.getElementById("limit");
 const atkElement = document.getElementById("atk");
 const defElement = document.getElementById("def");
@@ -21,7 +20,22 @@ function increaseAttack() {
     updateLimit();
     updateHp();
 }
-
+function decreaseAttack(){
+    if(attack == 0) return
+    attack--;
+    LIMIT++;
+    updateAtk();
+    updateLimit();
+    updateHp();
+}
+function decreaseDefense(){
+    if(defense == 0) return
+    defense--;
+    LIMIT++;
+    updateDef();
+    updateLimit();
+    updateHp();
+}
 function increaseDefense() {
     if(LIMIT < 1) return;
 
@@ -98,6 +112,7 @@ function storeData() {
     sessionStorage.setItem("nickname", nickname);
     sessionStorage.setItem("attack", attack);
     sessionStorage.setItem("defense", defense);
+    sessionStorage.setItem("level", level);
 
     goToHomePage();
 }

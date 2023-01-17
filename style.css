@@ -4,6 +4,9 @@
     -ms-user-select:none;      
     user-select:none;
 }
+p,label{
+    font-size: 2vw;
+}
 body{
     background-color: #1a1a1a;
     color: #e0e0e0;
@@ -11,8 +14,7 @@ body{
 header{
     display: flex;
     justify-content: center;
-    font-size: xx-large;
-    font-size: 3vw;
+    font-size: 2.1vw;
 }
 main{
     width: 100%;
@@ -37,7 +39,7 @@ pre{
     font-size: 1vw;
 }
 #statusBase,.inputName{
-    font-size: 2vw
+    font-size: 1.5vw
 }
 .inline {
     display: inline-block;
@@ -67,4 +69,84 @@ pre{
     position: absolute;
     top: 45%;
     left: 45%;
+}
+label{
+    margin: 1vw;
+}
+#dado{
+    
+    display: none;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25vh;
+    left: 35vw;
+    
+}
+#dado > p{
+    border: 1px solid white;
+    display: flex;
+    padding: 1vw 1vw 1vw 1vw;
+    
+}
+.player{
+    color: #4fb78a;
+}
+.mob{
+    color: #e95256;
+}
+#hudChoice{
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    background-color: #1a1a1a;
+    border: 0.1vh solid white;
+    padding: 10vw;
+}
+@keyframes rolar {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }
