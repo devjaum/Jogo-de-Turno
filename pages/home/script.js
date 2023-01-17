@@ -49,7 +49,7 @@ class Player extends Character {
 let nickname = sessionStorage.getItem("nickname");
 let attack = Number(sessionStorage.getItem("attack"));
 let defense = Number(sessionStorage.getItem("defense"));
-let level = Number(sessionStorage.getItem("level"));
+let level = (sessionStorage.getItem('level') === 'null')?1:sessionStorage.getItem('level');
 const attackButton = document.getElementById('attackButton');
 const player = new Player(0,level,0,attack,defense);
 let mobLevel = Number(sessionStorage.getItem("mobLevel"));
