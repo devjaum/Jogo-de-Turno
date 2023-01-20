@@ -32,7 +32,7 @@ button:hover{
     border: 0.1vw solid white;
 }
 .disabled{
-    display: none;
+    display: none !important;
 }
 pre{
     margin-left: 5%;
@@ -45,15 +45,18 @@ pre{
     display: inline-block;
 }
 .incorrect{
-    color: red !important;
+    color: #ff5b5b !important;
+}
+.correct{
+    color: #8cce8f !important;
 }
 .incorrectInput{
     background-color: red !important;
 }
 #playerInformation {
     position: absolute; 
-    bottom: 20vh; 
-    right: 30vw; 
+    bottom: 15vh; 
+    right: 20vw; 
     display: flex;
     justify-content: flex-end;
 }
@@ -100,10 +103,59 @@ label{
 #hudChoice{
     position: absolute;
     top: 20vh;
-    left: 30vw;
-    background-color: #1a1a1a;
+    left: 35vw;
+    background-color: #141414;
     border: 0.1vh solid white;
-    padding: 10vw;
+    padding: 5vw;
+}
+#hudChoice > label{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1vw !important;
+    color: #b5e6b8;
+}
+.checkbox > label{
+    font-size: 1vw !important;
+}
+.checkbox{
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 90%;
+    left: 45%;
+}
+.checkbox > input{
+    width: 1.5vh;
+}
+.buttonCrafting{
+    width: max-content;
+}
+.textCrafting{
+    font-size: 1vw;
+    padding: 2vw;
+}
+.divCrafting{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #141414;
+    border: 0.1vh solid white;
+    top: 30vh;
+    left: 33vw;
+    padding: 7vw;
+}
+#return{
+    position: absolute;
+    top: 80vh;
+    left: 45vw
+}
+#buttonCrafting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
 }
 @keyframes rolar {
 	0% {
